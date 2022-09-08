@@ -5,7 +5,7 @@ const axios = require("axios");
 const background = process.env.BACKGROUND_COLOR;
 
 const api = axios.create({
-  baseURL: process.env.API_BASE_URL,
+  baseURL: process.env.API_BASE_URL || `https://album-api.${process.env.CONTAINER_APP_ENV_DNS_SUFFIX}`,
   params: {},
   timeout: process.env.TIMEOUT || 15000,
 });
